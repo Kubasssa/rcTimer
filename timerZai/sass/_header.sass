@@ -1,0 +1,48 @@
+header
+    position: relative
+    height: 70px
+    display: flex
+    flex-direction: row
+    &::after
+        content: ""
+        background-color: #000000
+        position: absolute
+        bottom: 0
+        width: 96%
+        height: 1px
+        left: 2%
+    .menu
+        flex-basis: 450px
+        .aboutBtn
+            +btnStyles()
+            +btnHover()
+            left: 120px
+        .timesBtn
+            +btnStyles()
+            +btnHover()
+            left: 300px
+    .cube
+        flex-grow: 1
+        .cb
+            +cubePic()
+            animation: shakes 6s linear infinite
+        .cbSG
+            +cubePic()
+            display: none
+        .cbSR
+            +cubePic()
+            display: none
+        .cbSY
+            +cubePic()
+            display: none
+    .profile
+        flex-basis: 450px
+        .loginBtn
+            +btnStyles()
+            +btnHover()
+            right: 300px
+        .registBtn
+            +btnStyles()
+            +btnHover()
+            right: 120px
+

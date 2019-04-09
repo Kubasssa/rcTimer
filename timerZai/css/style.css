@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* .main {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@-webkit-keyframes shakes {
+  0% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  95% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  96% {
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
+  97% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  98% {
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
+  99% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+@keyframes shakes {
+  0% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  95% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  96% {
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
+  97% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  98% {
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
+  99% {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+header {
+  position: relative;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header::after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  bottom: 0;
+  width: 96%;
+  height: 1px;
+  left: 2%;
+}
+
+header .menu {
+  -ms-flex-preferred-size: 450px;
+      flex-basis: 450px;
+}
+
+header .menu .aboutBtn {
+  position: absolute;
+  height: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 25px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  left: 120px;
+}
+
+header .menu .aboutBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -105%;
+  width: 100%;
+  height: 1px;
+  background-color: red;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header .menu .aboutBtn:hover:before {
+  left: 0;
+}
+
+header .menu .timesBtn {
+  position: absolute;
+  height: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 25px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  left: 300px;
+}
+
+header .menu .timesBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -105%;
+  width: 100%;
+  height: 1px;
+  background-color: red;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header .menu .timesBtn:hover:before {
+  left: 0;
+}
+
+header .cube {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+header .cube .cb {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  -webkit-animation: shakes 6s linear infinite;
+          animation: shakes 6s linear infinite;
+}
+
+header .cube .cbSG {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  display: none;
+}
+
+header .cube .cbSR {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  display: none;
+}
+
+header .cube .cbSY {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  display: none;
+}
+
+header .profile {
+  -ms-flex-preferred-size: 450px;
+      flex-basis: 450px;
+}
+
+header .profile .loginBtn {
+  position: absolute;
+  height: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 25px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  right: 300px;
+}
+
+header .profile .loginBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -105%;
+  width: 100%;
+  height: 1px;
+  background-color: red;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header .profile .loginBtn:hover:before {
+  left: 0;
+}
+
+header .profile .registBtn {
+  position: absolute;
+  height: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 25px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  right: 120px;
+}
+
+header .profile .registBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -105%;
+  width: 100%;
+  height: 1px;
+  background-color: red;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header .profile .registBtn:hover:before {
+  left: 0;
+}
+
+.mainSection {
+  position: relative;
+  height: calc(100vh - 70px);
+}
+
+.mainSection .src {
+  position: absolute;
+  left: 600px;
+  top: 150px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 30px;
+}
+
+.mainSection .display {
+  position: absolute;
+  top: 350px;
+  left: 600px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: black;
+}
+
+.statsTimesSection {
+  position: absolute;
+  height: calc(100vh - 70px);
+  width: 500px;
+  right: 2%;
+  background-color: #fff;
+}
+
+.statsTimesSection::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: -10px;
+  width: 3px;
+  height: 90%;
+  background-color: black;
+}
+
+.statsTimesSection .statsTable {
+  position: relative;
+  top: 60px;
+  left: 18px;
+  height: 250px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.statsTimesSection .timeTable {
+  position: relative;
+  top: 0px;
+  left: 10px;
+  height: 670px;
+}
+
+.statsTimesSection .timeTable .resetButton {
+  position: relative;
+  border: 1px solid black;
+  background: none;
+  left: 8px;
+  width: 100px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.statsTimesSection .timeTable .times {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.statsTimesSection .timeTable .times .delete {
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
+  height: 30px;
+  margin: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #00cc99;
+  color: black;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.statsTimesSection .timeTable .times .delete:hover {
+  background-color: #33ffcc;
+}
+
+.loginPanel {
+  position: absolute;
+  top: 25px;
+  left: 2px;
+  width: 100%;
+  height: 250px;
+  background-color: #000;
+  display: none;
+}
+
+.loginPanel::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translateX(-70px);
+          transform: translateX(-70px);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid black;
+}
+
+.registPanel {
+  position: absolute;
+  top: 25px;
+  left: 2px;
+  width: 100%;
+  height: 250px;
+  background-color: #000;
+  display: none;
+}
+
+.registPanel::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  -webkit-transform: translateX(95px);
+          transform: translateX(95px);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid black;
+}
+/*# sourceMappingURL=style.css.map */
