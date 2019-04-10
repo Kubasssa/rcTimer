@@ -8,9 +8,9 @@ header
         background-color: #000000
         position: absolute
         bottom: 0
-        width: 96%
+        width: calc(100% - 80px)
         height: 1px
-        left: 2%
+        transform: translateX(40px)
     .menu
         flex-basis: 450px
         .aboutBtn
@@ -45,4 +45,12 @@ header
             +btnStyles()
             +btnHover()
             right: 120px
+        .loginPanel
+            position: absolute
+            height: 60px
+            width: 0px
+            top: 5px
+            right: 40px
+            background-color: #000
+            transition: .3s
 

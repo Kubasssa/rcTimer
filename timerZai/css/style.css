@@ -95,9 +95,10 @@ header::after {
   background-color: #000000;
   position: absolute;
   bottom: 0;
-  width: 96%;
+  width: calc(100% - 80px);
   height: 1px;
-  left: 2%;
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
 }
 
 header .menu {
@@ -285,6 +286,17 @@ header .profile .registBtn:hover:before {
   left: 0;
 }
 
+header .profile .loginPanel {
+  position: absolute;
+  height: 60px;
+  width: 0px;
+  top: 5px;
+  right: 40px;
+  background-color: #000;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .mainSection {
   position: relative;
   height: calc(100vh - 70px);
@@ -383,49 +395,5 @@ header .profile .registBtn:hover:before {
 
 .statsTimesSection .timeTable .times .delete:hover {
   background-color: #33ffcc;
-}
-
-.loginPanel {
-  position: absolute;
-  top: 25px;
-  left: 2px;
-  width: 100%;
-  height: 250px;
-  background-color: #000;
-  display: none;
-}
-
-.loginPanel::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  -webkit-transform: translateX(-70px);
-          transform: translateX(-70px);
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 15px solid black;
-}
-
-.registPanel {
-  position: absolute;
-  top: 25px;
-  left: 2px;
-  width: 100%;
-  height: 250px;
-  background-color: #000;
-  display: none;
-}
-
-.registPanel::before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  -webkit-transform: translateX(95px);
-          transform: translateX(95px);
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 15px solid black;
 }
 /*# sourceMappingURL=style.css.map */

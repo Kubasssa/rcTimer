@@ -76,20 +76,20 @@ function timer() {
     document.querySelector(".display").innerHTML = displayMinutes + displaySeconds + displayMiliSeconds;
 }
 
-// function valuesFromDatabase() {
-//     numberOfChildren = times.childElementCount;
+function valuesFromDatabase() {
+    numberOfChildren = times.childElementCount;
 
-//     for (let i = 0; i < numberOfChildren; i++) {
-//         timesTable[k] = timesFromDatabase[i].textContent;
-//         numberOfTimes++;
-//         best();
-//         worst();
-//         if (numberOfTimes >= 5) avg5();
-//         updateStats();
-//         k++;
-//     }
+    for (let i = 0; i < numberOfChildren; i++) {
+        timesTable[k] = timesFromDatabase[i].textContent;
+        numberOfTimes++;
+        best();
+        worst();
+        if (numberOfTimes >= 5) avg5();
+        updateStats();
+        k++;
+    }
 
-// }
+}
 
 // function insertToDatabase() {
 //     let lastTIme = document.querySelector(".times: nth-last-child(1)").innerHTML;

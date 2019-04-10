@@ -29,6 +29,7 @@
             <div class="profile">
                 <div class="loginBtn">Login</div>
                 <div class="registBtn">Regist</div>
+                <div class="loginPanel"></div>
             </div>
             <!-- <a href="timer.html" class="mainLink" ></a>
             <form action="form.php" method="POST">
@@ -41,8 +42,6 @@
         <section class="mainSection">
             <div class="display">00:00</div>
             <section class="statsTimesSection">
-                <div class="loginPanel"></div>
-                <div class="registPanel"></div>
                 <div class="statsTable">
                     <!-- <button id="3" class="statsButton"></button> -->
                     <div class="mainStats">
@@ -117,7 +116,7 @@
             $(".cb").toggle();
         });
         $(".loginBtn").click(function () {
-            $(".loginPanel").toggle();
+            $(".loginPanel").css("width", "700px");
         });
         $(".registBtn").click(function () {
             $(".registPanel").toggle();
