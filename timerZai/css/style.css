@@ -112,6 +112,7 @@ header .menu .aboutBtn {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  font-size: 19px;
   line-height: 25px;
   text-align: center;
   font-weight: 700;
@@ -144,6 +145,7 @@ header .menu .timesBtn {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  font-size: 19px;
   line-height: 25px;
   text-align: center;
   font-weight: 700;
@@ -170,13 +172,13 @@ header .menu .timesBtn:hover:before {
   left: 0;
 }
 
-header .cube {
+header .cubeIcon {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
-header .cube .cb {
+header .cubeIcon .cb {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -187,7 +189,7 @@ header .cube .cb {
           animation: shakes 6s linear infinite;
 }
 
-header .cube .cbSG {
+header .cubeIcon .cbSG {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -197,7 +199,7 @@ header .cube .cbSG {
   display: none;
 }
 
-header .cube .cbSR {
+header .cubeIcon .cbSR {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -207,7 +209,7 @@ header .cube .cbSR {
   display: none;
 }
 
-header .cube .cbSY {
+header .cubeIcon .cbSY {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -228,6 +230,7 @@ header .profile .loginBtn {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  font-size: 19px;
   line-height: 25px;
   text-align: center;
   font-weight: 700;
@@ -260,6 +263,7 @@ header .profile .registBtn {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  font-size: 19px;
   line-height: 25px;
   text-align: center;
   font-weight: 700;
@@ -302,57 +306,149 @@ header .profile .loginPanel {
   height: calc(100vh - 70px);
 }
 
-.mainSection .src {
+.mainSection .mainContentSection {
   position: absolute;
-  left: 600px;
+  width: calc(100% - 500px);
+  height: 100%;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+}
+
+@media screen and (max-width: 1200px) {
+  .mainSection .mainContentSection {
+    width: calc(100% - 250px);
+  }
+}
+
+.mainSection .mainContentSection .src {
+  position: absolute;
+  left: 50%;
   top: 150px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   font-size: 30px;
 }
 
-.mainSection .display {
+.mainSection .mainContentSection .display {
   position: absolute;
   top: 350px;
-  left: 600px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   font-size: 100px;
   color: black;
+}
+
+.mainSection .mainContentSection .cube {
+  position: absolute;
+  top: 500px;
+  left: 30%;
+  width: 200px;
+  height: 200px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(-100px);
+          transform: translateZ(-100px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  visibility: hidden;
+}
+
+.mainSection .mainContentSection .cube div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+}
+
+.mainSection .mainContentSection .cube .front {
+  -webkit-transform: rotateY(0deg) translateZ(110px);
+          transform: rotateY(0deg) translateZ(110px);
+  background: rgba(255, 0, 0, 0.7);
+}
+
+.mainSection .mainContentSection .cube .right {
+  -webkit-transform: rotateY(90deg) translateZ(110px);
+          transform: rotateY(90deg) translateZ(110px);
+  background: rgba(255, 255, 0, 0.7);
+}
+
+.mainSection .mainContentSection .cube .back {
+  -webkit-transform: rotateY(180deg) translateZ(110px);
+          transform: rotateY(180deg) translateZ(110px);
+  background: rgba(0, 255, 0, 0.7);
+}
+
+.mainSection .mainContentSection .cube .left {
+  -webkit-transform: rotateY(-90deg) translateZ(110px);
+          transform: rotateY(-90deg) translateZ(110px);
+  background: rgba(0, 255, 255, 0.7);
+}
+
+.mainSection .mainContentSection .cube .top {
+  -webkit-transform: rotateX(90deg) translateZ(110px);
+          transform: rotateX(90deg) translateZ(110px);
+  background: rgba(0, 0, 255, 0.7);
+}
+
+.mainSection .mainContentSection .cube .bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(110px);
+          transform: rotateX(-90deg) translateZ(110px);
+  background: rgba(255, 0, 255, 0.7);
 }
 
 .statsTimesSection {
   position: absolute;
   height: calc(100vh - 70px);
-  width: 500px;
-  right: 2%;
+  right: 0;
   background-color: #fff;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 1400px) {
+  .statsTimesSection {
+    width: 250px;
+  }
 }
 
 .statsTimesSection::before {
   content: "";
   position: absolute;
-  top: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: -10px;
   width: 3px;
-  height: 90%;
+  height: calc(100% - 70px);
   background-color: black;
 }
 
 .statsTimesSection .statsTable {
-  position: relative;
-  top: 60px;
-  left: 18px;
-  height: 250px;
+  font-size: 18px;
+  -ms-flex-preferred-size: 250px;
+      flex-basis: 250px;
   font-weight: 600;
   line-height: 20px;
+  margin-top: 32px;
+}
+
+.statsTimesSection .statsTable .mainStats {
+  margin-left: 10px;
 }
 
 .statsTimesSection .timeTable {
-  position: relative;
-  top: 0px;
-  left: 10px;
-  height: 670px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  overflow: hidden;
 }
 
 .statsTimesSection .timeTable .resetButton {
@@ -365,9 +461,10 @@ header .profile .loginPanel {
   cursor: pointer;
 }
 
-.statsTimesSection .timeTable .times {
+.statsTimesSection .timeTable .timesContainer {
   position: relative;
   width: 100%;
+  max-height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,9 +474,10 @@ header .profile .loginPanel {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
-.statsTimesSection .timeTable .times .delete {
+.statsTimesSection .timeTable .timesContainer .time {
   -ms-flex-preferred-size: 50px;
       flex-basis: 50px;
   height: 30px;
@@ -393,7 +491,7 @@ header .profile .loginPanel {
   cursor: pointer;
 }
 
-.statsTimesSection .timeTable .times .delete:hover {
+.statsTimesSection .timeTable .timesContainer .time:hover {
   background-color: #33ffcc;
 }
 /*# sourceMappingURL=style.css.map */

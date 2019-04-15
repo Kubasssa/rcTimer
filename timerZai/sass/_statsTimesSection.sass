@@ -1,29 +1,33 @@
 .statsTimesSection
     position: absolute
     height: calc(100vh - 70px)
-    width: 500px
-    right: 2%
+    right: 0
     background-color: #fff
+    width: 500px
+    display: flex
+    flex-direction: column
+    @media screen and (max-width: 1400px)
+        width: 250px
     &::before
         content: ""
         position: absolute
-        top: 5%
+        top: 50%
+        transform: translateY(-50%)
         left: -10px
         width: 3px
-        height: 90%
+        height: calc(100% - 70px)
         background-color: black
     .statsTable
-        position: relative
-        top: 60px
-        left: 18px
-        height: 250px
+        font-size: 18px
+        flex-basis: 250px
         font-weight: 600
         line-height: 20px
+        margin-top: 32px
+        .mainStats
+            margin-left: 10px
     .timeTable
-        position: relative
-        top: 0px
-        left: 10px 
-        height: 670px
+        flex-basis: 100%
+        overflow: hidden
         .resetButton
             position: relative
             border: 1px solid black
@@ -32,13 +36,15 @@
             width: 100px
             height: 20px
             cursor: pointer
-        .times
+        .timesContainer
             position: relative
             width: 100%
+            max-height: 80%
             display: flex
             flex-direction: row
             flex-wrap: wrap
-            .delete
+            overflow-y: scroll
+            .time
                 flex-basis: 50px
                 height: 30px
                 margin: 8px

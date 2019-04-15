@@ -20,7 +20,7 @@
                 <div class="aboutBtn">About</div>
                 <div class="timesBtn">times</div>
             </div>
-            <div class="cube">
+            <div class="cubeIcon">
                 <img class="cb" src="cb.png" alt="empty">
                 <img class="cbSG" src="cbSolvedGreen.png" alt="empty">
                 <img class="cbSR" src="cbSolvedRed.png" alt="empty">
@@ -29,34 +29,42 @@
             <div class="profile">
                 <div class="loginBtn">Login</div>
                 <div class="registBtn">Regist</div>
-                <div class="loginPanel"></div>
+                <div class="loginPanel">
+                    <form action="">
+
+                    </form>
+                </div>
             </div>
-            <!-- <a href="timer.html" class="mainLink" ></a>
-            <form action="form.php" method="POST">
-                <input type="text" name="login" placeholder="Login">
-                <input type="text" name="password" placeholder="Password" autocomplete="off">
-                <input type="submit" value="Go">
-            </form>> -->
         </header>
 
         <section class="mainSection">
-            <div class="display">00:00</div>
+            <section class="mainContentSection">
+                <div class="display">00:00</div>
+                <div class="cube">
+                    <div class="front"></div>
+                    <div class="right"></div>
+                    <div class="back"></div>
+                    <div class="left"></div>
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                </div>
+            </section>
             <section class="statsTimesSection">
                 <div class="statsTable">
                     <!-- <button id="3" class="statsButton"></button> -->
                     <div class="mainStats">
                         <div>Number of times: <span>0</span> </div>
-                        <div>best: <span>00</span></div>
-                        <div>worst <span>00</span></div>
-                        <div>avg5: <span>00</span></div>
-                        <div>avg12: <span>00</span></div>
-                        <div>avg100: <span>00</span></div>
+                        <div>best: <span>0.00</span></div>
+                        <div>worst: <span>0.00</span></div>
+                        <div>avg5: <span>0.00</span></div>
+                        <div>avg12: <span>0.00</span></div>
+                        <div>avg100: <span>0.00</span></div>
                         <br>
                     </div>
                 </div>
                 <div class="timeTable">
                     <input type="submit" class="resetButton" value="Reset" name="submit">
-                    <div class="times">
+                    <div class="timesContainer">
                     </div>
                 </div>
             </section>
@@ -84,10 +92,6 @@
                 timesTable = [];
                 k = 0;
             });
-        });
-
-        $('.delete').click(function () {
-            alert($('.delete').index(this));
         });
 
 

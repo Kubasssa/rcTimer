@@ -1,16 +1,58 @@
 .mainSection
     position: relative
     height: calc(100vh - 70px)
-    .src
+    .mainContentSection
         position: absolute
-        left: 600px
-        top: 150px
-        transform: translateX(-50%)
-        font-size: 30px
-    .display
-        position: absolute
-        top: 350px
-        left: 600px
-        transform: translate(-50%, -50%)
-        font-size: 100px
-        color: rgb(0, 0, 0)
+        width: calc(100% - 500px)
+        height: 100%
+        perspective: 400px
+        @media screen and (max-width: 1200px)
+            width: calc(100% - 250px)
+        .src
+            position: absolute
+            left: 50%
+            top: 150px
+            transform: translateX(-50%)
+            font-size: 30px
+        .display
+            position: absolute
+            top: 350px
+            left: 50%
+            transform: translateX(-50%)
+            font-size: 100px
+            color: rgb(0, 0, 0)
+        .cube
+            position: absolute
+            top: 500px
+            left: 30%
+            width: 200px
+            height: 200px
+            transform-style: preserve-3d
+            transform: translateZ(-100px)
+            transition: transform 0.3s
+            visibility: hidden
+            div
+                position: absolute
+                width: 200px
+                height: 200px
+                border: 2px solid black
+            .front   
+                transform: rotateY(  0deg) translateZ(110px)
+                background: hsla(  0, 100%, 50%, 0.7)
+            .right   
+                transform: rotateY(  90deg) translateZ(110px)
+                background: hsla( 60, 100%, 50%, 0.7)
+            .back    
+                transform: rotateY(  180deg) translateZ(110px)
+                background: hsla( 120, 100%, 50%, 0.7)
+            .left    
+                transform: rotateY(  -90deg) translateZ(110px)
+                background: hsla( 180, 100%, 50%, 0.7)
+            .top     
+                transform: rotateX(  90deg) translateZ(110px)
+                background: hsla( 240, 100%, 50%, 0.7)
+            .bottom  
+                transform: rotateX(  -90deg) translateZ(110px)
+                background: hsla( 300, 100%, 50%, 0.7)
+            
+

@@ -10,7 +10,7 @@ let dFlag = 0;
 let fFlag = 0;
 let bFlag = 0;
 
-const section = document.querySelector("section");
+const section = document.querySelector(".mainContentSection");
 
 function generateScramble() {
     scramble = "";
