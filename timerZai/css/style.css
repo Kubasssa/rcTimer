@@ -339,64 +339,14 @@ header .profile .loginPanel {
   color: black;
 }
 
-.mainSection .mainContentSection .cube {
+.mainSection .mainContentSection .cubeContainer {
   position: absolute;
-  top: 500px;
-  left: 30%;
-  width: 200px;
-  height: 200px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: translateZ(-100px);
-          transform: translateZ(-100px);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-  visibility: hidden;
-}
-
-.mainSection .mainContentSection .cube div {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 2px solid black;
-}
-
-.mainSection .mainContentSection .cube .front {
-  -webkit-transform: rotateY(0deg) translateZ(110px);
-          transform: rotateY(0deg) translateZ(110px);
-  background: rgba(255, 0, 0, 0.7);
-}
-
-.mainSection .mainContentSection .cube .right {
-  -webkit-transform: rotateY(90deg) translateZ(110px);
-          transform: rotateY(90deg) translateZ(110px);
-  background: rgba(255, 255, 0, 0.7);
-}
-
-.mainSection .mainContentSection .cube .back {
-  -webkit-transform: rotateY(180deg) translateZ(110px);
-          transform: rotateY(180deg) translateZ(110px);
-  background: rgba(0, 255, 0, 0.7);
-}
-
-.mainSection .mainContentSection .cube .left {
-  -webkit-transform: rotateY(-90deg) translateZ(110px);
-          transform: rotateY(-90deg) translateZ(110px);
-  background: rgba(0, 255, 255, 0.7);
-}
-
-.mainSection .mainContentSection .cube .top {
-  -webkit-transform: rotateX(90deg) translateZ(110px);
-          transform: rotateX(90deg) translateZ(110px);
-  background: rgba(0, 0, 255, 0.7);
-}
-
-.mainSection .mainContentSection .cube .bottom {
-  -webkit-transform: rotateX(-90deg) translateZ(110px);
-          transform: rotateX(-90deg) translateZ(110px);
-  background: rgba(255, 0, 255, 0.7);
+  top: 50px;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .statsTimesSection {
@@ -427,7 +377,7 @@ header .profile .loginPanel {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: -10px;
-  width: 3px;
+  width: 1px;
   height: calc(100% - 70px);
   background-color: black;
 }
@@ -445,6 +395,14 @@ header .profile .loginPanel {
   margin-left: 10px;
 }
 
+.statsTimesSection .statsTable .mainStats div span {
+  cursor: pointer;
+}
+
+.statsTimesSection .statsTable .mainStats div span:hover {
+  background-color: #33ffc1;
+}
+
 .statsTimesSection .timeTable {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -459,6 +417,13 @@ header .profile .loginPanel {
   width: 100px;
   height: 20px;
   cursor: pointer;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.statsTimesSection .timeTable .resetButton:hover {
+  background-color: #000000;
+  color: white;
 }
 
 .statsTimesSection .timeTable .timesContainer {
@@ -482,6 +447,7 @@ header .profile .loginPanel {
       flex-basis: 50px;
   height: 30px;
   margin: 8px;
+  padding: 0 5px;
   font-weight: 600;
   font-size: 18px;
   background-color: #00cc99;
@@ -493,5 +459,21 @@ header .profile .loginPanel {
 
 .statsTimesSection .timeTable .timesContainer .time:hover {
   background-color: #33ffcc;
+}
+
+.statsTimesSection .timeTable .timesContainer .timeRedColor {
+  background-color: #f65555;
+}
+
+.statsTimesSection .timeTable .timesContainer .timeRedColor:hover {
+  background-color: #f8a0a0;
+}
+
+.statsTimesSection .timeTable .timesContainer .timeYellowColor {
+  background-color: #e6e600;
+}
+
+.statsTimesSection .timeTable .timesContainer .timeYellowColor:hover {
+  background-color: #ffff99;
 }
 /*# sourceMappingURL=style.css.map */
