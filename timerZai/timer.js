@@ -24,6 +24,7 @@ const stats = {
     bestTime: 0,
     worstTime: 0,
     avg5Value: 0,
+    avg12Value: 0,
     numberOfTimes: 0,
 }
 
@@ -134,6 +135,24 @@ const avg5 = () => {
         stats.avg5Value /= 3;
     } else stats.avg5Value = 0;
 }
+
+const avg12 = () => {
+    if (stats.numberOfTimes >= 12) {
+        stats.avg12Value = 0;
+        let bestInAvg = 1000;
+        let worstInAvg = 0;
+        for (let i = (stats.numberOfTimes - 12); i < stats.numberOfTimes; i++) {
+
+            if (timesTable[i] < bestInAvg) bestInAvg = timesTable[i];
+            if (timesTable[i] > worstInAvg) worstInAvg = timesTable[i];
+
+            stats.avg12Value += Number(timesTable[i]);
+        }
+        stats.avg12Value -= Number(bestInAvg);
+        stats.avg12Value -= Number(worstInAvg);
+        stats.avg12Value /= 10;
+    } else stats.avg12Value = 0;
+}
 //----------------------------updating n deleting times--------------------
 const deleteTimeFromTable = (timeIndex) => {
     for (let i = timeIndex; i < stats.numberOfTimes; i++) {
@@ -146,17 +165,20 @@ const updateStats = () => {
         best();
         worst();
         avg5();
+        avg12();
     } else {
         stats.numberOfTimes = 0;
         stats.worstTime = 0;
         stats.bestTime = 0;
         stats.avg5Value = 0;
+        stats.avg12Value = 0;
     }
     recolorAllTimesDiv();
     document.querySelector(".mainStats :nth-child(1) span").innerHTML = stats.numberOfTimes; // updatetuje liczbe czasów //usuwanie czasu
     document.querySelector(".mainStats :nth-child(2) span").innerHTML = convertTimeToString(stats.bestTime); // updatetuje najlepszy czas
     document.querySelector(".mainStats :nth-child(3) span").innerHTML = convertTimeToString(stats.worstTime); // updatetuje najgorszy czas
     document.querySelector(".mainStats :nth-child(4) span").innerHTML = convertTimeToString(stats.avg5Value); // updatetuje srednia z 5
+    document.querySelector(".mainStats :nth-child(5) span").innerHTML = convertTimeToString(stats.avg12Value); // updatetuje srednia z 5
 }
 
 const saveTime = () => {
@@ -205,8 +227,7 @@ const allTimeDelete = () => {
 const showBestTIme = () => {
     const allTimes = document.querySelectorAll(".time");
     allTimes.forEach(el => {
-        if (el.textContent === stats.bestTime.toString()) {
-            // el.classList.remove("timeGreenColor");
+        if (el.textContent === convertTimeToString(stats.bestTime)) {
             el.classList.toggle("timeYellowColor");
         }
     })
@@ -215,7 +236,7 @@ const showBestTIme = () => {
 const showWorstTIme = () => {
     const allTimes = document.querySelectorAll(".time");
     allTimes.forEach(el => {
-        if (el.textContent === stats.worstTime.toString()) {
+        if (el.textContent === convertTimeToString(stats.worstTime)) {
             el.classList.toggle("timeRedColor");
         }
     })
