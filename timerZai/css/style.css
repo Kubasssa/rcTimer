@@ -119,6 +119,8 @@ header .menu .aboutBtn {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
   overflow: hidden;
   left: 120px;
 }
@@ -152,6 +154,8 @@ header .menu .timesBtn {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
   overflow: hidden;
   left: 300px;
 }
@@ -237,6 +241,8 @@ header .profile .loginBtn {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
   overflow: hidden;
   right: 300px;
 }
@@ -270,6 +276,8 @@ header .profile .registBtn {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
   overflow: hidden;
   right: 120px;
 }
