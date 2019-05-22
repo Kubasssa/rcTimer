@@ -484,4 +484,118 @@ header .profile .loginPanel {
 .statsTimesSection .timeTable .timesContainer .timeYellowColor:hover {
   background-color: #ffff99;
 }
+
+.loginContainer {
+  position: absolute;
+  height: 600px;
+  width: 500px;
+  border: 2px solid black;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loginContainer h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.loginContainer form :nth-child(1) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.loginContainer form :nth-child(2) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.loginContainer form :nth-child(3) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.loginContainer form :nth-child(3):hover {
+  background-color: #666;
+}
+
+.registContainer {
+  position: absolute;
+  height: 600px;
+  width: 500px;
+  border: 2px solid black;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.registContainer h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.registContainer form :nth-child(1) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.registContainer form :nth-child(2) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.registContainer form :nth-child(3) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.registContainer form :nth-child(4) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.registContainer form :nth-child(5) {
+  width: 60%;
+  height: 50px;
+  margin: 10px 20%;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.registContainer form :nth-child(5):hover {
+  background-color: #666;
+}
 /*# sourceMappingURL=style.css.map */

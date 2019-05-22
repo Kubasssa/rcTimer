@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="menu">
+                <a href="timer.html" class="aboutBtn">Cube</a>
+                <a href="timer.html" class="timesBtn">timer</a>
+            </div>
+            <div class="cubeIcon">
+                <img class="cb" src="cubePics/cb.png" alt="empty">
+                <img class="cbSG" src="cubePics/cbSolvedGreen.png" alt="empty">
+                <img class="cbSR" src="cubePics/cbSolvedRed.png" alt="empty">
+                <img class="cbSY" src="cubePics/cbSolvedYellow.png" alt="empty">
+            </div>
+            <div class="profile">
+                <a href="loginForm.html" class="loginBtn">Login</a>
+                <a href="registForm.html" class="registBtn">Regist</a>
+            </div>
+        </header>
+
+        <div class="loginContainer">
+            <h1>login</h1>
+            <form action="auth" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

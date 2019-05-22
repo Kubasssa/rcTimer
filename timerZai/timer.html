@@ -29,13 +29,8 @@
                 <img class="cbSY" src="cubePics/cbSolvedYellow.png" alt="empty">
             </div>
             <div class="profile">
-                <div class="loginBtn">Login</div>
-                <div class="registBtn">Regist</div>
-                <div class="loginPanel">
-                    <form action="">
-
-                    </form>
-                </div>
+                <a href="loginForm.html" class="loginBtn">Login</a>
+                <a href="registForm.html" class="registBtn">Regist</a>
             </div>
         </header>
 
@@ -97,12 +92,6 @@
         $(".cbSY").click(function () {
             $(".cbSY").toggle();
             $(".cb").toggle();
-        });
-        $(".loginBtn").click(function () {
-            $(".loginPanel").css("width", "700px");
-        });
-        $(".registBtn").click(function () {
-            $(".registPanel").toggle();
         });
     </script>
     <script src="js/Timer.js"></script>
