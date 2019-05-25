@@ -37,20 +37,33 @@ header
             display: none
     .profile
         flex-basis: 450px
+        position: relative
         .loginBtn
             +btnStyles()
             +btnHover()
+            border: none
+            background-color: white
             right: 300px
         .registBtn
             +btnStyles()
             +btnHover()
             right: 120px
-        .loginPanel
+        &__username
             position: absolute
-            height: 60px
-            width: 0px
-            top: 5px
-            right: 40px
-            background-color: #000
-            transition: .3s
+            line-height: 70px
+            right: 35%
+            font-size: 20px
+            font-weight: 700
+            float: left
+        &__avatar
+            position: absolute
+            top: 50%
+            left: 70%
+            transform: translateY(-50%)
+            height: 50px
+            width: 50px
+            background-color: royalblue
+            border-radius: 50%
+
+
 

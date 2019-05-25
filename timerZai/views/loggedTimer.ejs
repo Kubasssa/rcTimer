@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="css/style.css?v=" rel="stylesheet" type="text/css" />
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="three/three.js"></script>
-    <script src="three/OrbitControls.js"></script>
-
-
+    <link href="css/style.css?v=" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -29,11 +19,8 @@
                 <img class="cbSY" src="public/cubePics/cbSolvedYellow.png" alt="empty">
             </div>
             <div class="profile">
-                <!-- <a href="loginForm.html" class="loginBtn">Login</a> -->
-                <form action="log" method="POST">
-                    <input type="submit" value="Login" class="loginBtn">
-                </form>
-                <a href="registForm.html" class="registBtn">Regist</a>
+                <span class="profile__username"><%= login%></span>
+                <div class="profile__avatar"></div>
             </div>
         </header>
 
@@ -65,6 +52,7 @@
                 <div class="timeTable">
                     <input type="submit" class="resetButton" value="Reset" name="submit">
                     <div class="timesContainer">
+                        <div><%= timesArray[0] %></div>
                     </div>
                 </div>
             </section>

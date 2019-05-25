@@ -3,6 +3,11 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
 }
 
 * .main {
@@ -10,10 +15,6 @@
   width: 100%;
   background-color: #fff;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 @-webkit-keyframes shakes {
@@ -226,6 +227,7 @@ header .cubeIcon .cbSY {
 header .profile {
   -ms-flex-preferred-size: 450px;
       flex-basis: 450px;
+  position: relative;
 }
 
 header .profile .loginBtn {
@@ -244,6 +246,8 @@ header .profile .loginBtn {
   text-decoration: none;
   color: black;
   overflow: hidden;
+  border: none;
+  background-color: white;
   right: 300px;
 }
 
@@ -298,15 +302,25 @@ header .profile .registBtn:hover:before {
   left: 0;
 }
 
-header .profile .loginPanel {
+header .profile__username {
   position: absolute;
-  height: 60px;
-  width: 0px;
-  top: 5px;
-  right: 40px;
-  background-color: #000;
-  -webkit-transition: .3s;
-  transition: .3s;
+  line-height: 70px;
+  right: 35%;
+  font-size: 20px;
+  font-weight: 700;
+  float: left;
+}
+
+header .profile__avatar {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 50px;
+  width: 50px;
+  background-color: royalblue;
+  border-radius: 50%;
 }
 
 .mainSection {
@@ -436,7 +450,7 @@ header .profile .loginPanel {
 
 .statsTimesSection .timeTable .timesContainer {
   position: relative;
-  width: 100%;
+  width: 94%;
   max-height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,6 +462,7 @@ header .profile .loginPanel {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow-y: scroll;
+  margin-right: 6%;
 }
 
 .statsTimesSection .timeTable .timesContainer .time {
