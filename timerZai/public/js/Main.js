@@ -48,6 +48,44 @@ class Main {
         });
     }
 
+    updateTimesFromDB() {
+        this.allTimes.forEach((el) => {
+            this.updateTimes.saveTime(this.convertTimeToTable(el.textContent));
+            console.log(el.textContent)
+            el.remove();
+        })
+    }
+
+    convertTimeToTable(time) {
+        if (time.length < 6) {
+            let result = [];
+            result.push("");
+
+            time = time.split(".");
+            time[0] += ".";
+
+            result.push(time[0]);
+            result.push(Number(time[1]));
+            console.log(result);
+            return result
+        } else if (time.length >= 6) {
+            let result = [];
+
+            time = time.split(/[:.]/)
+            time[0] += ":";
+            time[1] += ".";
+            console.log(time)
+            result.push(time[0]);
+            result.push(time[1]);
+            result.push(Number(time[2]));
+
+            console.log(result);
+
+            return result
+        }
+    }
+
 }
 
 const main = new Main();
+main.updateTimesFromDB();

@@ -1,19 +1,15 @@
 const Cryptr = require("cryptr");
 cryptr = new Cryptr("myTotalySecretKey");
+const getTimes = require("./getTimes.js");
 
 const connection = require("./connection");
-let resultJSON = {
-    login: "",
-    id: 0
-};
 
-let times = {};
 
 module.exports.log = function (request, response) {
     let username = request.body.username;
     let password = request.body.password;
-
-
+    let queryFlag = false;
+    request.session.times = [];
     if (username && password) {
 
         connection.query('SELECT * FROM userdata WHERE login = ? AND password = ?', [username, password], function (error, results, fields) {
@@ -28,10 +24,7 @@ module.exports.log = function (request, response) {
                     decryptedString = results[0].password;
                     if (password == decryptedString) {
                         request.session.loggedin = true;
-                        request.session.username = username;
-
-                        resultJSON.login = results[0].login;
-                        console.log(resultJSON);
+                        request.session.username = results[0].login;
 
                         connection.query('SELECT time FROM times WHERE userID = ?', [results[0].userID], function (error, results, fields) {
                             if (error) {
@@ -41,19 +34,15 @@ module.exports.log = function (request, response) {
                                 })
                             } else {
                                 for (let i = 0; i < results.length; i++) {
-                                    times[i] = results[i].time;
+                                    request.session.times.push(results[i].time);
                                 }
-                                // times = results;
-                                console.log(times)
-                                response.end();
+                                // request.session.times = results[0].time;
+                                queryFlag = true;
+                                response.redirect('/timer');
                             }
+                            response.end();
+                            console.log("response is ended")
                         });
-
-                        // response.redirect('/timer');
-                        response.render("loggedTimer", {
-                            login: resultJSON.login,
-                            timesArray: times
-                        })
                     } else {
                         response.json({
                             status: false,
@@ -63,7 +52,6 @@ module.exports.log = function (request, response) {
                 } else {
                     response.send('Incorrect Username and/or Password!');
                 }
-                response.end();
             }
         });
     } else {

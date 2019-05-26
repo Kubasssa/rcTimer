@@ -52,7 +52,9 @@
                 <div class="timeTable">
                     <input type="submit" class="resetButton" value="Reset" name="submit">
                     <div class="timesContainer">
-                        <div><%= timesArray[0] %></div>
+                        <% for(let i=0; i < timesArray.length; i++) { %>
+                        <div class="time"><%= timesArray[i] %></div>
+                        <% } %>
                     </div>
                 </div>
             </section>

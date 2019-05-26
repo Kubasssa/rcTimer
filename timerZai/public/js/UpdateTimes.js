@@ -24,6 +24,7 @@ class UpdadeTimes {
     }
 
     saveTime = (time) => {
+        console.log(time)
         this.stats.pushToTimesTable(ConvertTime.covertTimeToNumber(time[0], time[1], time[2])); //dodaje czas do tablicy
         let tmpSpan = document.createElement("div"); // tworzy diva
 
