@@ -2,6 +2,7 @@ class ConvertTime {
     constructor() {}
 
     static covertTimeToNumber = (minutes = "", seconds = "", miliSeconds) => {
+
         const returnTime = minutes + seconds + miliSeconds;
         if (returnTime.length > 5) {
             const splitTime = returnTime.split(':');

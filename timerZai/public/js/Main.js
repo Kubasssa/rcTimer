@@ -17,9 +17,13 @@ class Main {
             if (e.keyCode == "32" && this.timer.getI() == 1) this.timer.start();
         });
 
-        window.addEventListener("keydown", (e) => {
+        window.addEventListener("keydown", (e) => { //stop czas
             this.display.style.color = "gold";
-            if (e.keyCode == "32" && this.timer.getI() == 2) this.timer.stop(), this.updateTimes.saveTime(this.timer.getTime()); //stop czas
+            if (e.keyCode == "32" && this.timer.getI() == 2) {
+                this.timer.stop();
+                this.updateTimes.saveTime(this.timer.getTime());
+                this.insertToDB();
+            }
         });
 
         window.addEventListener("keyup", (e) => { //zmiana i
@@ -41,6 +45,7 @@ class Main {
         document.querySelector(".mainStats :nth-child(3) span").addEventListener("click", () => {
             this.displayingBests.showWorstTIme(this.stats.getWorstTime())
         });
+
 
         this.statsText.forEach(element => {
             element.style.color = "#00cc99";
@@ -83,6 +88,25 @@ class Main {
 
             return result
         }
+    }
+
+    insertToDB = async () => {
+        const response = await fetch('/insertToDB', {
+            method: 'POST',
+            body: JSON.stringify({
+                task: 5
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+    }
+
+
+    getFromDB = async () => {
+        const response = await fetch('/getTimesFromDB');
+        const json = await response.json();
+        console.log(json);
     }
 
 }

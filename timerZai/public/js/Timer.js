@@ -438,4 +438,8 @@ class Timer {
         return [this.displayMinutes, this.displaySeconds, this.displayMiliSeconds];
     }
 
+    getTimeInOneString() {
+        return this.displayMinutes + this.displaySeconds + this.displayMiliSeconds;
+    }
+
 }
