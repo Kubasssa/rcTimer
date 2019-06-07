@@ -11,21 +11,14 @@
     text-transform: uppercase
     letter-spacing: 2px
     text-decoration: none
+    border: none
+    background-color: white
     color: black
     overflow: hidden
 
 =btnHover()
-    &::before
-        content: ""
-        position: absolute
-        bottom: 0px
-        left: -105%
-        width: 100%
-        height: 1px
-        background-color: red
-        transition: 0.2s
-    &:hover:before
-        left: 0
+    &:hover
+        color: #aaa
 
 =cubePic()
         position: absolute

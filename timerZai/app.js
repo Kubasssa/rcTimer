@@ -40,7 +40,7 @@ app.get('/css/style.css', function (request, response) {
 
 app.get('/timer', function (request, response) {
     if (request.session.loggedin) {
-        // console.log(request.session.times);
+        console.log(request.session.times)
         response.render("loggedTimer", {
             login: request.session.username,
             timesArray: request.session.times
@@ -53,8 +53,14 @@ app.get('/timer', function (request, response) {
 app.get("/getTimesFromDB", getTimes.getTimes);
 
 app.post("/log", function (request, response) {
-    response.sendFile(path.join(__dirname, "/loginForm.html"))
+    response.sendFile(path.join(__dirname, "/loginForm.html"));
 })
+
+app.post("/reg", function (request, response) {
+    response.sendFile(path.join(__dirname, "/registForm.html"));
+})
+
+app.post("/regist", regist.reg)
 
 app.post("/auth", login.log);
 

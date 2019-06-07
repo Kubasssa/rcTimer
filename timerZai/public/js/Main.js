@@ -47,6 +47,9 @@ class Main {
         });
 
 
+        // window.addEventListener('DOMContentLoaded', this.getFromDB);
+
+
         this.statsText.forEach(element => {
             element.style.color = "#00cc99";
             element.style.marginLeft = "3px"
@@ -91,11 +94,14 @@ class Main {
     }
 
     insertToDB = async () => {
+
+        let value = {
+            item: this.timer.getTimeInOneString()
+        };
+
         const response = await fetch('/insertToDB', {
             method: 'POST',
-            body: JSON.stringify({
-                task: 5
-            }),
+            body: JSON.stringify(value),
             headers: {
                 "Content-Type": "application/json"
             }

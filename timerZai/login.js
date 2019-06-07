@@ -26,7 +26,7 @@ module.exports.log = function (request, response) {
                         request.session.username = results[0].login;
                         request.session.userID = results[0].userID;
 
-                        response.redirect('/timer');
+                        response.redirect('/getTimesFromDB');
                     } else {
                         response.json({
                             status: false,

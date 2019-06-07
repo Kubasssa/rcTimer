@@ -23,18 +23,22 @@
                 <img class="cbSY" src="public/cubePics/cbSolvedYellow.png" alt="empty">
             </div>
             <div class="profile">
-                <a href="loginForm.html" class="loginBtn">Login</a>
-                <a href="registForm.html" class="registBtn">Regist</a>
+                <form action="log" method="POST">
+                    <input type="submit" value="Login" class="loginBtn">
+                </form>
+                <form action="reg" method="POST">
+                    <input type="submit" value="Regist" class="registBtn">
+                </form>
             </div>
         </header>
 
         <div class="registContainer">
             <h1>Regist</h1>
-            <form action="auth" method="POST">
+            <form action="reg" method="POST">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="password" name="repeatPassword" placeholder="Password" required>
-                <input type="text" name="mail" placeholder="Mail" required>
+                <!-- <input type="text" name="mail" placeholder="Mail" required> -->
                 <input type="submit" value="regist">
             </form>
         </div>

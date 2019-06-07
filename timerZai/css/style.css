@@ -121,25 +121,15 @@ header .menu .aboutBtn {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
+  border: none;
+  background-color: white;
   color: black;
   overflow: hidden;
   left: 120px;
 }
 
-header .menu .aboutBtn::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: -105%;
-  width: 100%;
-  height: 1px;
-  background-color: red;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-header .menu .aboutBtn:hover:before {
-  left: 0;
+header .menu .aboutBtn:hover {
+  color: #aaa;
 }
 
 header .menu .timesBtn {
@@ -156,25 +146,15 @@ header .menu .timesBtn {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
+  border: none;
+  background-color: white;
   color: black;
   overflow: hidden;
   left: 300px;
 }
 
-header .menu .timesBtn::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: -105%;
-  width: 100%;
-  height: 1px;
-  background-color: red;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-header .menu .timesBtn:hover:before {
-  left: 0;
+header .menu .timesBtn:hover {
+  color: #aaa;
 }
 
 header .cubeIcon {
@@ -244,27 +224,15 @@ header .profile .loginBtn {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
-  color: black;
-  overflow: hidden;
   border: none;
   background-color: white;
+  color: black;
+  overflow: hidden;
   right: 300px;
 }
 
-header .profile .loginBtn::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: -105%;
-  width: 100%;
-  height: 1px;
-  background-color: red;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-header .profile .loginBtn:hover:before {
-  left: 0;
+header .profile .loginBtn:hover {
+  color: #aaa;
 }
 
 header .profile .registBtn {
@@ -281,25 +249,15 @@ header .profile .registBtn {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
+  border: none;
+  background-color: white;
   color: black;
   overflow: hidden;
   right: 120px;
 }
 
-header .profile .registBtn::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: -105%;
-  width: 100%;
-  height: 1px;
-  background-color: red;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-header .profile .registBtn:hover:before {
-  left: 0;
+header .profile .registBtn:hover {
+  color: #aaa;
 }
 
 header .profile__username {
