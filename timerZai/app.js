@@ -74,7 +74,7 @@ app.get('/logout', function (req, res, next) {
             if (err) {
                 return next(err);
             } else {
-                res.sendFile(path.join(__dirname + '/timer.html'));
+                res.redirect("/");
             }
         });
     }

@@ -55,15 +55,6 @@ class Main {
         });
 
 
-        // window.addEventListener('DOMContentLoaded', this.getFromDB);
-        window.addEventListener("click", (e) => {
-            if (e.target.className == "profile__logout") {
-                this.logout();
-                console.log("kakakak")
-            }
-        });
-
-
         this.statsText.forEach(element => {
             element.style.color = "#00cc99";
             element.style.marginLeft = "3px"
@@ -152,10 +143,6 @@ class Main {
         const response = await fetch('/deleteAllTImesFromDB', {
             method: 'DELETE',
         });
-    }
-
-    logout = async () => {
-        const response = await fetch("/logout");
     }
 
 }

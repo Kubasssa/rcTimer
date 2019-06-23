@@ -10,10 +10,10 @@
     <div class="main">
         <header>
             <div class="menu">
-                <form action="" method="POST">
+                <form action="" method="GETT">
                     <input type="submit" value="Cube" class="aboutBtn">
                 </form>
-                <form action="" method="POST">
+                <form action="" method="GET">
                     <input type="submit" value="timer" class="timesBtn">
                 </form>
             </div>
@@ -25,7 +25,10 @@
             </div>
             <div class="profile">
                 <span class="profile__username"><%= login%></span>
-                <span class="profile__logout">logout</span>
+                <form action="logout" method="GET">
+                    <input type="submit" value="logout" class="profile__logout">
+                </form>
+                <!-- <span class="profile__logout">logout</span> -->
                 <div class="profile__avatar"></div>
             </div>
         </header>
