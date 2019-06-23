@@ -3,14 +3,19 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="css/style.css?v=" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
     <div class="main">
         <header>
             <div class="menu">
-                <a href="timer.html" class="aboutBtn">Cube</a>
-                <a href="timer.html" class="timesBtn">timer</a>
+                <form action="" method="POST">
+                    <input type="submit" value="Cube" class="aboutBtn">
+                </form>
+                <form action="" method="POST">
+                    <input type="submit" value="timer" class="timesBtn">
+                </form>
             </div>
             <div class="cubeIcon">
                 <img class="cb" src="public/cubePics/cb.png" alt="empty">
@@ -20,6 +25,7 @@
             </div>
             <div class="profile">
                 <span class="profile__username"><%= login%></span>
+                <span class="profile__logout">logout</span>
                 <div class="profile__avatar"></div>
             </div>
         </header>
@@ -94,12 +100,18 @@
     <script src="public/js/StatsGetSet.js"></script>
     <script src="public/js/DisplayingBests.js"></script>
     <script src="public/js/ConvertTime.js"></script>
-    <script src="public/js/DeleteTime.js"></script>
+    <script src="public/js/Delete.js"></script>
     <script src="public/js/Main.js"></script>
     <!-- <script src="BuildCube.js"></script>
     <script src="BuildPiece.js"></script>
     <script src="Movement.js"></script>
     <script src="Scene.js"></script> -->
+    <script>
+        getFromDB = async () => {
+            const response = await fetch('/getTimesFromDB');
+        }
+        window.onload = getFromDB;
+    </script>
 
 </body>
 

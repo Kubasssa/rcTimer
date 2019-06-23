@@ -12,6 +12,8 @@ const login = require("./login.js");
 const regist = require("./regist.js");
 const saveData = require("./insertToDB.js");
 const getTimes = require("./getTimes.js");
+const deleteTime = require("./deleteTime.js");
+const deleteAllTimes = require("./deleteAllTimes.js");
 
 
 app.set("view engine", "ejs");
@@ -50,8 +52,6 @@ app.get('/timer', function (request, response) {
     }
 });
 
-app.get("/getTimesFromDB", getTimes.getTimes);
-
 app.post("/log", function (request, response) {
     response.sendFile(path.join(__dirname, "/loginForm.html"));
 })
@@ -60,10 +60,32 @@ app.post("/reg", function (request, response) {
     response.sendFile(path.join(__dirname, "/registForm.html"));
 })
 
+app.post("/unlogedTimer", function (request, response) {
+    response.sendFile(path.join(__dirname, "/timer.html"));
+})
+
 app.post("/regist", regist.reg)
 
 app.post("/auth", login.log);
 
+app.get('/logout', function (req, res, next) {
+    if (req.session) {
+        req.session.destroy(function (err) {
+            if (err) {
+                return next(err);
+            } else {
+                res.sendFile(path.join(__dirname + '/timer.html'));
+            }
+        });
+    }
+});
+
 app.post("/insertToDB", saveData.insert);
+
+app.get("/getTimesFromDB", getTimes.getTimes);
+
+app.delete("/deleteFromDB", deleteTime.deleteTime);
+
+app.delete("/deleteAllTImesFromDB", deleteAllTimes.deleteAllTimes);
 
 app.listen(3000);

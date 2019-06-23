@@ -6,12 +6,13 @@ class Main {
         this.resetBtn = document.querySelector(".resetButton");
         this.statsText = document.querySelectorAll(".mainStats span");
 
+
         this.stats = new StatsGetSet();
         this.statsCalc = new StatsCalc();
         this.timer = new Timer(this.display);
         this.updateTimes = new UpdadeTimes(this.stats);
         this.displayingBests = new DisplayingBests();
-        this.deleteTime = new DeleteTime(this.timesContainer, this.updateTimes, this.stats);
+        this.delete = new Delete(this.timesContainer, this.updateTimes, this.stats);
 
         window.addEventListener("keyup", (e) => { //start czas
             if (e.keyCode == "32" && this.timer.getI() == 1) this.timer.start();
@@ -33,11 +34,18 @@ class Main {
 
         window.addEventListener("click", (e) => { //wykrywanie nacisniętego czasu
             if (e.target.classList.contains("time")) {
-                this.deleteTime.timeDelete(e.target);
+                let index = $(e.target).index();
+                console.log(index)
+                if (this.delete.timeDelete(e.target)) {
+                    this.deleteFromDB(index);
+                }
             }
         })
 
-        this.resetBtn.addEventListener("click", this.deleteTime.allTimeDelete);
+        this.resetBtn.addEventListener("click", () => {
+            this.delete.allTimeDelete();
+            this.deleteAllFromDB();
+        });
         document.querySelector(".mainStats :nth-child(2) span").addEventListener("click", () => {
             this.displayingBests.showBestTIme(this.stats.getBestTime())
         });
@@ -48,6 +56,12 @@ class Main {
 
 
         // window.addEventListener('DOMContentLoaded', this.getFromDB);
+        window.addEventListener("click", (e) => {
+            if (e.target.className == "profile__logout") {
+                this.logout();
+                console.log("kakakak")
+            }
+        });
 
 
         this.statsText.forEach(element => {
@@ -113,6 +127,35 @@ class Main {
         const response = await fetch('/getTimesFromDB');
         const json = await response.json();
         console.log(json);
+    }
+
+    deleteFromDB = async (index) => {
+        // const response = await fetch("/deleteFromDB");
+
+        let value = {
+            item: index
+        };
+
+        console.log(index)
+        console.log(value.item)
+
+        const response = await fetch('/deleteFromDB', {
+            method: 'DELETE',
+            body: JSON.stringify(value),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+    }
+
+    deleteAllFromDB = async () => {
+        const response = await fetch('/deleteAllTImesFromDB', {
+            method: 'DELETE',
+        });
+    }
+
+    logout = async () => {
+        const response = await fetch("/logout");
     }
 
 }

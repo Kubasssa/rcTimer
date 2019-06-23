@@ -19,11 +19,8 @@ module.exports.reg = function (request, response) {
                         message: 'there are some error with query'
                     })
                 } else {
-                    response.json({
-                        status: false,
-                        message: 'account create'
-                    })
-                    response.sendFile(path.join(__dirname + '/timer.html'));
+
+                    response.redirect("/");
                 }
             });
         } else {

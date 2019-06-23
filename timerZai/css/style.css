@@ -281,6 +281,21 @@ header .profile__avatar {
   border-radius: 50%;
 }
 
+header .profile__logout {
+  position: absolute;
+  line-height: 100px;
+  right: 35%;
+  font-size: 12px;
+  color: red;
+  cursor: pointer;
+  background-color: #ddd;
+  height: 0px;
+}
+
+header .profile__logout:hover {
+  color: #ffb3b3;
+}
+
 .mainSection {
   position: relative;
   height: calc(100vh - 70px);
@@ -309,6 +324,13 @@ header .profile__avatar {
   font-size: 30px;
 }
 
+@media screen and (max-width: 1600px) {
+  .mainSection .mainContentSection .src {
+    font-size: 25px;
+    top: 100px;
+  }
+}
+
 .mainSection .mainContentSection .display {
   position: absolute;
   top: 350px;
@@ -317,6 +339,13 @@ header .profile__avatar {
           transform: translateX(-50%);
   font-size: 100px;
   color: black;
+}
+
+@media screen and (max-width: 1600px) {
+  .mainSection .mainContentSection .display {
+    font-size: 80px;
+    top: 300px;
+  }
 }
 
 .mainSection .mainContentSection .cubeContainer {
@@ -344,7 +373,13 @@ header .profile__avatar {
           flex-direction: column;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
+  .statsTimesSection {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
   .statsTimesSection {
     width: 250px;
   }
@@ -465,8 +500,15 @@ header .profile__avatar {
   border: 2px solid black;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+}
+
+@media only screen and (max-height: 750px) {
+  .loginContainer {
+    height: 500px;
+    width: 400px;
+  }
 }
 
 .loginContainer h1 {
@@ -474,6 +516,12 @@ header .profile__avatar {
   font-size: 50px;
   margin-top: 50px;
   margin-bottom: 70px;
+}
+
+@media only screen and (max-height: 750px) {
+  .loginContainer h1 {
+    margin-bottom: 50px;
+  }
 }
 
 .loginContainer form :nth-child(1) {
@@ -514,8 +562,15 @@ header .profile__avatar {
   border: 2px solid black;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+}
+
+@media only screen and (max-height: 750px) {
+  .registContainer {
+    height: 500px;
+    width: 400px;
+  }
 }
 
 .registContainer h1 {
@@ -523,6 +578,12 @@ header .profile__avatar {
   font-size: 50px;
   margin-top: 50px;
   margin-bottom: 70px;
+}
+
+@media only screen and (max-height: 750px) {
+  .registContainer h1 {
+    margin-bottom: 53px;
+  }
 }
 
 .registContainer form :nth-child(1) {
@@ -549,7 +610,7 @@ header .profile__avatar {
   padding: 15px;
 }
 
-.registContainer form :nth-child(4) {
+.registContainer form :nth-child(5) {
   width: 60%;
   height: 50px;
   margin: 10px 20%;
@@ -557,7 +618,7 @@ header .profile__avatar {
   padding: 15px;
 }
 
-.registContainer form :nth-child(5) {
+.registContainer form :nth-child(4) {
   width: 60%;
   height: 50px;
   margin: 10px 20%;
@@ -568,7 +629,7 @@ header .profile__avatar {
   font-size: 16px;
 }
 
-.registContainer form :nth-child(5):hover {
+.registContainer form :nth-child(4):hover {
   background-color: #666;
 }
 /*# sourceMappingURL=style.css.map */

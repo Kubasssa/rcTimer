@@ -1,4 +1,4 @@
-class DeleteTime {
+class Delete {
     constructor(timesContainer, updateTimes, stats) {
         this.timesContainer = timesContainer;
         this.updateTimes = updateTimes;
@@ -13,6 +13,7 @@ class DeleteTime {
 
     timeDelete = function (target) {
         let deleteTimeIndex = 0;
+        let isTrue = false;
         let ifConfirm = confirm(`Do you want to delete:  ${$(target).index()+1} time`);
         if (ifConfirm) {
 
@@ -24,7 +25,10 @@ class DeleteTime {
 
             this.stats.decrementNumberOfTImes();
             this.updateTimes.updateStats();
+
+            isTrue = true;
         }
+        return isTrue;
     }
 
     allTimeDelete = () => {

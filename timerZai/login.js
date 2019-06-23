@@ -7,7 +7,6 @@ const connection = require("./connection");
 module.exports.log = function (request, response) {
     let username = request.body.username;
     let password = request.body.password;
-    request.session.times = [];
 
     if (username && password) {
 
