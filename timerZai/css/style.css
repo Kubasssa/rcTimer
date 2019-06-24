@@ -362,6 +362,48 @@ header .profile__logout:hover {
           transform: translateX(-50%);
 }
 
+.mainSection .adminPanel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 550px;
+  width: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-left: 1px solid black;
+  display: -ms-grid;
+  display: grid;
+  padding-left: 20px;
+}
+
+.mainSection .adminPanel ul {
+  list-style-type: none;
+}
+
+.mainSection .adminPanel ul li div {
+  height: 80px;
+  width: 200px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.mainSection .adminPanel ul li div .userID {
+  font-size: 15px;
+}
+
+.mainSection .adminPanel ul li div .blockBtn {
+  font-size: 15px;
+  color: red;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.mainSection .adminPanel ul li div .blockBtn:hover {
+  color: #ffb3b3;
+}
+
 .statsTimesSection {
   position: absolute;
   height: calc(100vh - 70px);

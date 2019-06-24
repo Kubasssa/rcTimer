@@ -11,7 +11,7 @@ module.exports.reg = function (request, response) {
 
     if (username && password && repeatPassword) {
         if (password === repeatPassword) {
-
+            password = cryptr.encrypt(password);
             connection.query('INSERT INTO userdata (login, password) VALUES (?, ?)', [username, password], function (error, results, fields) {
                 if (error) {
                     response.json({

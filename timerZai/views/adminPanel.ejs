@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="css/style.css?v=" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="menu">
+                <form action="" method="GETT">
+                    <input type="submit" value="Cube" class="aboutBtn">
+                </form>
+                <form action="" method="GET">
+                    <input type="submit" value="timer" class="timesBtn">
+                </form>
+            </div>
+            <div class="cubeIcon">
+                <img class="cb" src="public/cubePics/cb.png" alt="empty">
+                <img class="cbSG" src="public/cubePics/cbSolvedGreen.png" alt="empty">
+                <img class="cbSR" src="public/cubePics/cbSolvedRed.png" alt="empty">
+                <img class="cbSY" src="public/cubePics/cbSolvedYellow.png" alt="empty">
+            </div>
+            <div class="profile">
+                <span class="profile__username"><%= login%></span>
+                <form action="logout" method="GET">
+                    <input type="submit" value="logout" class="profile__logout">
+                </form>
+                <!-- <span class="profile__logout">logout</span> -->
+                <div class="profile__avatar"></div>
+            </div>
+        </header>
+
+        <section class="mainSection">
+            <section class="adminPanel">
+                <ul>
+                    <% for(let i=0; i < usersNames.length; i++) { %>
+                    <li>
+                        <div>
+                            <span class="userName">User: <%= usersNames[i] %></span><br>
+                            <span class="userId">id: <%= usersID[i] %></span><br>
+                            <span class="blockBtn" id='<%= usersID[i] %>' >block</span>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+            </section>
+        </section>
+    </div>
+
+    <script>
+        $(".cb").click(function () {
+            let x = Math.floor((Math.random() * 3) + 1);
+            if (x == 1) {
+                $(".cbSR").toggle();
+            } else if (x == 2) {
+                $(".cbSG").toggle();
+            } else if (x == 3) {
+                $(".cbSY").toggle();
+            }
+            $(".cb").toggle();
+        });
+
+        $(".cbSR").click(function () {
+            $(".cbSR").toggle();
+            $(".cb").toggle();
+        });
+        $(".cbSG").click(function () {
+            $(".cbSG").toggle();
+            $(".cb").toggle();
+        });
+        $(".cbSY").click(function () {
+            $(".cbSY").toggle();
+            $(".cb").toggle();
+        });
+
+        const blockBtn = document.querySelector(".blockBtn");
+
+        window.addEventListener("click", (e) => {
+            if (e.target.className === "blockBtn") {
+                console.log(e.target.id);
+                let index = e.target.id;
+                blockUser(index);
+            }
+        });
+
+        blockUser = async (index) => {
+
+            let value = {
+                item: index
+            };
+
+            const response = await fetch('/blockUser', {
+                method: 'PUT',
+                body: JSON.stringify(value),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+        }
+    </script>
+    <!-- <script src="public/js/Timer.js"></script>
+    <script src="public/js/scramble.js"></script>
+    <script src="public/js/UpdateTimes.js"></script>
+    <script src="public/js/StatsCalc.js"></script>
+    <script src="public/js/StatsGetSet.js"></script>
+    <script src="public/js/DisplayingBests.js"></script>
+    <script src="public/js/ConvertTime.js"></script>
+    <script src="public/js/Delete.js"></script>
+    <script src="public/js/Main.js"></script> -->
+
+</body>
+
+</html>

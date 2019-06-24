@@ -34,32 +34,34 @@
             width: 600px
             height: 600px
             transform: translateX(-50%)
-            // transform-style: preserve-3d
-            // transform: translateZ(-100px)
-            // transition: transform 0.3s
-            // // visibility: hidden
-            // div
-            //     position: absolute
-            //     width: 200px
-            //     height: 200px
-            //     border: 2px solid black
-            // .front   
-            //     transform: rotateY(  0deg) translateZ(110px)
-            //     background: hsla(  0, 100%, 50%, 0.7)
-            // .right   
-            //     transform: rotateY(  90deg) translateZ(110px)
-            //     background: hsla( 60, 100%, 50%, 0.7)
-            // .back    
-            //     transform: rotateY(  180deg) translateZ(110px)
-            //     background: hsla( 120, 100%, 50%, 0.7)
-            // .left    
-            //     transform: rotateY(  -90deg) translateZ(110px)
-            //     background: hsla( 180, 100%, 50%, 0.7)
-            // .top     
-            //     transform: rotateX(  90deg) translateZ(110px)
-            //     background: hsla( 240, 100%, 50%, 0.7)
-            // .bottom  
-            //     transform: rotateX(  -90deg) translateZ(110px)
-            //     background: hsla( 300, 100%, 50%, 0.7)
-            
-
+    .adminPanel
+        position: absolute
+        top: 50%
+        left: 50%
+        height: 550px
+        width: 90%       
+        transform: translate(-50%,-50%)
+        border-left: 1px solid black
+        display: grid
+        padding-left: 20px
+        ul
+            list-style-type: none 
+            li 
+                div
+                    height: 80px
+                    width: 200px
+                    background-color: #ddd
+                    margin-bottom: 10px
+                    font-size: 20px
+                    padding: 5px
+                    .userName
+                        
+                    .userID
+                        font-size: 15px
+                    .blockBtn
+                        font-size: 15px
+                        color: red
+                        cursor: pointer
+                        margin-top: 5px
+                        &:hover
+                            color: #ffb3b3

@@ -10,7 +10,7 @@ module.exports.log = function (request, response) {
 
     if (username && password) {
 
-        connection.query('SELECT * FROM userdata WHERE login = ? AND password = ?', [username, password], function (error, results, fields) {
+        connection.query('SELECT * FROM userdata WHERE login = ?', [username], function (error, results, fields) {
             if (error) {
                 response.json({
                     status: false,
@@ -18,14 +18,23 @@ module.exports.log = function (request, response) {
                 })
             } else {
                 if (results.length > 0) {
-                    // decryptedString = cryptr.decrypt(results[0].password);
-                    decryptedString = results[0].password;
+                    decryptedString = cryptr.decrypt(results[0].password);
+                    //decryptedString = results[0].password;
                     if (password == decryptedString) {
-                        request.session.loggedin = true;
-                        request.session.username = results[0].login;
-                        request.session.userID = results[0].userID;
+                        if (results[0].blockFlag === 1) {
+                            request.session.loggedin = true;
+                            request.session.username = results[0].login;
+                            request.session.userID = results[0].userID;
 
-                        response.redirect('/getTimesFromDB');
+                            if (username === "admin" && password == "admin") {
+                                response.redirect("/getAllUsersData");
+                            } else {
+                                response.redirect('/getTimesFromDB');
+                            }
+                        } else {
+                            console.log("you are blocked ");
+                            response.redirect("/");
+                        }
                     } else {
                         response.json({
                             status: false,
